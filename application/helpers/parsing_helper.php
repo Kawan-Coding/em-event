@@ -80,3 +80,13 @@ function agenda($data)
 	}
 	return $card;
 }
+
+function foto($nim)
+{
+	$angkatan=(int)substr($nim,0,2);
+	if($angkatan<18){
+		return "https://siakad.ub.ac.id/siam/biodata.fotobynim.php?nim=$nim&key=MzIxZm90b3V5ZTEyMysyMDE4LTA4LTIxIDIxOjA2OjAw";
+	}else{
+		return "http://siakad.ub.ac.id/dirfoto/foto/foto_20$angkatan/$nim.jpg";
+	}
+}

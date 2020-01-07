@@ -50,6 +50,14 @@
                         <input id="pengumuman" name="pengumuman" type="text" readonly>
                     </div>
                 </div>
+
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="jarkoman" name="jarkoman" class="materialize-textarea"></textarea>
+                        <label for="jarkoman" class="">Jarkoman Firstgath</label>
+                    </div>
+                </div>
             </div>
             <br>
             <div class="modal-footer right-align mb-3">
@@ -80,7 +88,7 @@
     </div>
 
     <div id="edit_agenda" class="modal" style="z-index: 1200; top:5vh; min-height: 90vh">
-        <form id="agenda">
+        <form id="edit-agenda">
             <div class="modal-content center-align">
                 <h5>Edit Rekrutmen</h5>
                 <div class="divider"></div>
@@ -121,6 +129,13 @@
                             <span class="material-icon">Tanggal Pengumuman</span>
                         </a>
                         <input id="edit_pengumuman" name="pengumuman" type="text" readonly>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="edit_jarkoman" name="edit_jarkoman" class="materialize-textarea"></textarea>
+                        <label for="edit_jarkoman" class="">Jarkoman Firstgath</label>
                     </div>
                 </div>
             </div>
@@ -222,6 +237,7 @@
                 $("#edit_buka").val(r.TGL_BUKA);
                 $("#edit_tutup").val(r.TGL_TUTUP);
                 $("#edit_pengumuman").val(r.TGL_PENGUMUMAN);
+                $("#edit_jarkoman").val(r.JARKOMAN);
             }
         })
         $("#edit_agenda").fadeIn('slow');
@@ -305,6 +321,7 @@
             let buka = $("#edit_buka").val();
             let tutup = $("#edit_tutup").val();
             let pengumuman = $("#edit_pengumuman").val();
+            let jarkoman = $("#edit_jarkoman").val();
             $.ajax({
                 type: "POST",
                 url: "<?= base_url('agenda/update') ?>",
@@ -316,7 +333,8 @@
                     deskripsi: deskripsi,
                     tgl_buka: buka,
                     tgl_tutup: tutup,
-                    tgl_pengumuman: pengumuman
+                    tgl_pengumuman: pengumuman,
+                    jarkoman: jarkoman
 
                 },
                 dataType: "json",
@@ -353,6 +371,7 @@
         let buka = $("#buka").val();
         let tutup = $("#tutup").val();
         let pengumuman = $("#pengumuman").val();
+        let jarkoman = $("#jarkoman").val();
         var Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -369,7 +388,8 @@
                 deskripsi: deskripsi,
                 tgl_buka: buka,
                 tgl_tutup: tutup,
-                tgl_pengumuman: pengumuman
+                tgl_pengumuman: pengumuman,
+                jarkoman: jarkoman
 
             },
             dataType: "json",

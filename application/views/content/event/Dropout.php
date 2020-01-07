@@ -22,7 +22,7 @@
         <!-- <div class="btn-floating btn-large waves-effect waves-light ">
             <i class="mdi-action-delete" style="font-size: 40px"></i>
         </div> -->
-        <img id="foto" alt="foto calon">
+        <img id="foto" alt="foto calon" style="max-width:150px">
         <h5>Apakah kamu yakin ?</h5>
         <h6>Mengeluarkan <span class="red-text" id="nama_drop"></span></h6>
         <h6>dari <span class="cyan-text" id="agenda"></span></h6>
@@ -64,7 +64,7 @@
                 console.log(r);
                 if (r.error == false) {
                     if (r.data.STATUS == 'DITERIMA') {
-                        var foto = "https://siakad.ub.ac.id/siam/biodata.fotobynim.php?nim=" + nim + "&key=MzIxZm90b3V5ZTEyMysyMDE4LTA4LTIxIDIxOjA2OjAw";
+                        var foto = r.data.FOTO;
                         $('#foto').attr('src', foto);
                         $('#nama_drop').html("");
                         $('#agenda').html("");

@@ -21,7 +21,7 @@
         <h5>Konfirmasi EM-Event</h5>
         <div class="divider"></div>
         <br>
-        <img id="foto" alt="foto calon">
+        <img id="foto" alt="foto calon" style="max-width:150px">
         <h5 id="nama"></h5>
         <h6 id="fakultas"></h6>
         <h6 id="nim_pop"></h6>
@@ -62,7 +62,7 @@
                 console.log(r);
                 if (r.error == false) {
                     if (r.data.STATUS == 'DAFTAR') {
-                        var foto = "https://siakad.ub.ac.id/siam/biodata.fotobynim.php?nim=" + nim + "&key=MzIxZm90b3V5ZTEyMysyMDE4LTA4LTIxIDIxOjA2OjAw";
+                        var foto = r.data.FOTO;
                         $('#foto').attr('src', foto);
                         $('#nama').html("");
                         $('#fakultas').html("");

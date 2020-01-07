@@ -237,7 +237,7 @@
             <img src="../img/logo2.png" class="formlogo" alt="">
             <div class="col s12 l3 center-align">
                 <br>
-                <img id="foto" src="" alt="">
+                <img id="foto" src="" alt="" style="max-width:150px">
                 <h6 id="nim"></h6>
                 <h6 id="nama"></h6>
                 <h6 id="fak"></h6>
@@ -249,7 +249,7 @@
             <div class="col s12 l9">
                 <div class="center-align">
                     <h4>FORMULIR</h4>
-                    <h5>EM UB 2019</h5>
+                    <h5>REKRUTMEN EM-EVENT</h5>
                 </div>
 
                 <div class="">
@@ -991,6 +991,11 @@
                 let anakstr = response.data.ANAK;
                 let anak = anakstr.split("~");
 
+                var foto = response.data.FOTO;
+                $('#foto').attr('src', foto);
+                $('#nim').text(response.data.NIM);
+                $('#nama').text(response.data.NAMA_LENGKAP);
+                $('#fak').text(response.data.FAKULTAS);
                 $("input[name=ipk]").val(response.data.IPK);
                 $("input[name=panggilan]").val(response.data.PANGGILAN);
                 $("input[name=cita]").val(response.data.CITA);

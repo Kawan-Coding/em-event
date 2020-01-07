@@ -21,7 +21,7 @@
         <h5>Staf Muda EM UB 2019</h5>
         <div class="divider"></div>
         <br>
-        <img id="foto" alt="foto calon">
+        <img id="foto" alt="foto calon" style="max-width:150px">
         <h6 id="nama"></h6>
         <div class="input-field col s8 offset-s2">
             <select id="plotdiv" class="materialSelect">
@@ -74,7 +74,7 @@
                             $("#plotdiv, #pilihanPengurus").append('<option value="' + element.ID_PILIHAN + '" >' + element.TB_PILIHAN + '</option>');
                             $("#plotdiv, #pilihanPengurus").trigger('contentChanged');
                         });
-                        var foto = "https://siakad.ub.ac.id/siam/biodata.fotobynim.php?nim=" + nim + "&key=MzIxZm90b3V5ZTEyMysyMDE4LTA4LTIxIDIxOjA2OjAw";
+                        var foto = r.data.FOTO;
                         $('#foto').attr('src', foto);
                         $('#nama').text(r.data.NAMA_LENGKAP);
                     } else if (r.data.STATUS == 'DITERIMA') {

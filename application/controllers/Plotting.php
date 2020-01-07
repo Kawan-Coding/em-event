@@ -54,6 +54,7 @@ class Plotting extends CI_Controller
 				)
 			);
 		} else {
+			$data[0]['FOTO']=foto($data[0]['NIM']);
 			$data[0]['PILIHAN'] = json_decode($data[0]['PILIHAN']);
 			echo json_encode(
 				array(

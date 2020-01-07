@@ -55,6 +55,7 @@ class Presensi extends CI_Controller
 				)
 			);
 		} else {
+			$data[0]['FOTO']=foto($data[0]['NIM']);
 			echo json_encode(
 				array(
 					'status' => 200,

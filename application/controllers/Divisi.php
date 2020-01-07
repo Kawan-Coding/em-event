@@ -70,6 +70,8 @@ class Divisi extends CI_Controller
 				)
 			);
 		} else {
+
+			$res[0]['FOTO']=foto($res[0]['NIM']);
 			$res = $res[0];
 			$res['DAFTAR'] = json_decode($res["DAFTAR"]);
 			$res['KEPANITIAAN_DIIKUTI'] = json_decode($res["KEPANITIAAN_DIIKUTI"]);

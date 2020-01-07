@@ -47,12 +47,12 @@ class Agenda extends CI_Controller
 			"TGL_BUKA" => $buka,
 			"TGL_TUTUP" => $tutup,
 			"TGL_PENGUMUMAN" => $pengumuman,
-			"TB_PILIHAN_PENGUMUMAN" => r($this->input->POST('tb_pilihan_pengumuman')),
+			"JARKOMAN" => r($this->input->POST('jarkoman')),
 			"FOTO" => $gambar,
 			"STATUS" => 'DRAFT',
-			"YOUTUBE" => r($this->input->POST('yt')),
-			"HALAMAN" => r($this->input->POST('halaman')),
-			"TWIBBON" => r($this->input->POST('twibbon')),
+			// "YOUTUBE" => r($this->input->POST('yt')),
+			// "HALAMAN" => r($this->input->POST('halaman')),
+			// "TWIBBON" => r($this->input->POST('twibbon')),
 		);
 		$check = $this->Master->insert('TB_AGENDA', $data);
 		if ($check) {
@@ -160,12 +160,12 @@ class Agenda extends CI_Controller
 			"TGL_BUKA" => $buka,
 			"TGL_TUTUP" => $tutup,
 			"TGL_PENGUMUMAN" => $pengumuman,
-			"TB_PILIHAN_PENGUMUMAN" => r($this->input->POST('tb_pilihan_pengumuman')),
+			"JARKOMAN" => r($this->input->POST('jarkoman')),
 			"FOTO" => r($this->input->POST('foto')),
 			"STATUS" => 'DRAFT',
-			"YOUTUBE" => r($this->input->POST('yt')),
-			"HALAMAN" => r($this->input->POST('halaman')),
-			"TWIBBON" => r($this->input->POST('twibbon')),
+			// "YOUTUBE" => r($this->input->POST('yt')),
+			// "HALAMAN" => r($this->input->POST('halaman')),
+			// "TWIBBON" => r($this->input->POST('twibbon')),
 		);
 		$check = $this->Master->update('TB_AGENDA', $data, array('ID_AGENDA' => $id));
 		if ($check) {
